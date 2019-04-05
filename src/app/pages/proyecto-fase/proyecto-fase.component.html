@@ -1,0 +1,54 @@
+<div *blockUI="'verified_proyectoFase'">
+    {{title | uppercase}}
+    <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <table>
+            <tr>
+                <td>
+                    <div class="contenedor">
+                        <mat-form-field>
+                            <input matInput formControlName="id" placeholder="ID">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="idProyecto" placeholder="Id proyecto">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="nombre" placeholder="Nombre"> </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="fechaCompromiso" [matDatepicker]="picker" placeholder="Fecha Compromiso">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="fechaTermino" [matDatepicker]="pickerUno" placeholder="Fecha Termino">
+                            <mat-datepicker-toggle matSuffix [for]="pickerUno"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerUno></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </td>
+                <td>
+                    <div class="contenedor">
+                        <mat-form-field>
+                            <input matInput formControlName="orden" placeholder="orden">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput formControlName="idUsuarioAlta" placeholder="Id Usuario Alta">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="idUsuarioModificacion" placeholder="Id Usuario Modificacion">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="estatus" placeholder="Estatus">
+                        </mat-form-field>
+                        <div class="button-row">
+                            <button mat-fab color="primary" type="submit" [disabled]="form.invalid">Enviar</button>
+                            <button mat-fab color="warn" (click)="onClear()" [disabled]="form.invalid">Cancelar</button>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</div>

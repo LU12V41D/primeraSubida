@@ -1,0 +1,89 @@
+<div *blockUI="'verified_user'">
+    {{title | uppercase}}
+    <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <table>
+            <tr>
+                <td>
+                    <div class="contenedor">
+                        <mat-form-field>
+                            <input matInput formControlName="nombre" placeholder="Nombre" autofocus="true" #usuario>
+                            <mat-error *ngIf="form.controls['nombre'].errors?.pattern">Por favor ingresa solo letras</mat-error>
+                            <mat-error *ngIf="form.controls['nombre'].errors?.required">Por favor ingresa un nombre</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput formControlName="apellidos" placeholder="Apellidos">
+                            <mat-error *ngIf="form.controls['apellidos'].errors?.pattern">Por favor ingresa solo letras</mat-error>
+                            <mat-error *ngIf="form.controls['apellidos'].errors?.required">Por favor ingresa un nombre</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput formControlName="codigoPostal" placeholder="CodigoPostal" maxlength="5" minlength="5">
+                            <mat-error *ngIf="form.controls['codigoPostal'].errors?.required">Codigo postal incorrecto 5 caracteres</mat-error>
+                            <mat-error *ngIf="form.controls['codigoPostal'].errors?.pattern">Por favor ingresa solo numeros</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput formControlName="correo" placeholder="Emal">
+                            <mat-error *ngIf="form.controls['nombre'].errors?.required">Correo invalido</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput formControlName="direccion" placeholder="Direccion">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput formControlName="estatus" placeholder="Estatus">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput formControlName="fechaAlta" [matDatepicker]="picker" placeholder="Fecha Alta">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </td>
+                <td>
+                    <div class="contenedor">
+                        <mat-form-field>
+                            <input matInput formControlName="fechaModificacion" [matDatepicker]="pickerDos" placeholder="Fecha Modificacion">
+                            <mat-datepicker-toggle matSuffix [for]="pickerDos"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerDos></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput formControlName="fechaNacimiento" [matDatepicker]="pickerTres" placeholder="Fecha Nacimiento">
+                            <mat-datepicker-toggle matSuffix [for]="pickerTres"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerTres></mat-datepicker>
+                        </mat-form-field>
+
+                        <div class="add-bottom-padding">
+                            <mat-radio-group formControlName="genero" style="border-radius: 15px;">
+                                <mat-radio-button value="M">Masculino</mat-radio-button>
+                                <mat-radio-button value="F">Femenino</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+
+                        <mat-form-field>
+                            <input matInput formControlName="idUsuarioAlta" placeholder="Id Usuario Alta">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput formControlName="idUsuarioModificacion" placeholder="Usuario Modificacion">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput formControlName="urlImagen" placeholder="Url Imagen">
+                        </mat-form-field>
+
+                        <div class="button-row">
+                            <button mat-fab color="primary" type="submit" [disabled]="form.invalid">Enviar</button>
+                            <button mat-fab color="warn" (click)="onClear()" [disabled]="form.invalid">Cancelar</button>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+<div *blockUI="'verified_taDo'">
+    {{title | uppercase}}
+    <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <div class="contenedor">
+            <mat-form-field>
+                <input matInput formControlName="id" placeholder="Id">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idTarea" placeholder="Id Tarea">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="urlDocumento" placeholder="URL Documento">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idUsuarioResponsable" placeholder="Usuario responsable">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idUsuarioAlta" placeholder="Usuario Alta">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idUsuarioModificacion" placeholder="Usuario Modificacion">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="estatus" placeholder="estatus">
+            </mat-form-field>
+            <div class="button-row" align="center">
+                <button mat-fab color="primary" type="submit" [disabled]="form.invalid">Enviar</button>
+                <button mat-fab color="warn" (click)="onClear()" [disabled]="form.invalid">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>

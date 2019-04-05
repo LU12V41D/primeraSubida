@@ -1,0 +1,57 @@
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Mi perfil
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+            <mat-list-item routerLinkActive="active" [routerLink]="['perfil']">
+                <fa name="cog" animation="spin"></fa>
+                <h3 matLine> Mis datos </h3>
+            </mat-list-item>
+        </mat-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Páginas
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+            <mat-list-item routerLinkActive="active" [routerLink]="['registro']">
+                <h3 matLine> Usuario</h3>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active" [routerLink]="['proyect']">
+                <h3 matLine> Proyecto</h3>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active" [routerLink]="['task']">
+                <h3 matLine> Tarea</h3>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active" [routerLink]="['minuta']">
+                <h3 matLine> Minuta</h3>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active" [routerLink]="['pft']">
+                <h3 matLine> Proyecto Fase Tarea</h3>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active" [routerLink]="['minutaAsis']">
+                <h3 matLine> Minuta Asistentes</h3>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active" [routerLink]="['minutaTareas']">
+                <h3 matLine> Minuta Tareas</h3>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active" [routerLink]="['proyectoFase']">
+                <h3 matLine> Proyecto Fase</h3>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active" [routerLink]="['proyectoUsuario']">
+                <h3 matLine> Proyecto Usuario</h3>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active" [routerLink]="['tareaDocument']">
+                <h3 matLine> Tarea Documento</h3>
+            </mat-list-item>
+            <mat-list-item routerLinkActive="active" [routerLink]="['tareaRelacion']">
+                <h3 matLine> Tarea Relacion</h3>
+            </mat-list-item>
+        </mat-list>
+    </mat-expansion-panel>
+</mat-accordion>

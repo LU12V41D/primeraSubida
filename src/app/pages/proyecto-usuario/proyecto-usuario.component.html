@@ -1,0 +1,29 @@
+<div *blockUI="'verified_proUser'">
+    {{title | uppercase}}
+    <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <div class="contenedor">
+            <mat-form-field>
+                <input matInput formControlName="idProyectoUsuario" placeholder="Id Proyecto Usuario">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idProyecto" placeholder="Id Proyecto">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idUsuario" placeholder="Id Usuario">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idUsuarioAlta" placeholder="Id Usuario Alta">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idUsuarioModificacion" placeholder="Id Usuario Modificacion">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="estatus" placeholder="Estatus">
+            </mat-form-field>
+            <div class="button-row">
+                <button mat-fab color="primary" type="submit" [disabled]="form.invalid">Enviar</button>
+                <button mat-fab color="warn" (click)="onClear()" [disabled]="form.invalid">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>

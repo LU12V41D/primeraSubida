@@ -1,0 +1,28 @@
+<div *blockUI="'verified_project'">
+    {{title | uppercase}}
+    <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <div class="contenedor">
+
+            <mat-form-field>
+                <input matInput formControlName="nombre" placeholder="Nombre Proyecto" autofocus>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput formControlName="descripcion" placeholder="Descripcion del proyecto"></textarea>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idUsuarioAlta" placeholder="Usuario alta">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idUsuarioModificacion" placeholder="Usuario Modificacion">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="estatus" placeholder="Estatus proyecto">
+            </mat-form-field>
+        </div>
+        <div class="button-row" align="center">
+            <button mat-fab color="primary" type="submit" [disabled]="form.invalid">Enviar</button>
+            <button mat-fab color="warn" (click)="onClear()" [disabled]="form.invalid">Cancelar</button>
+        </div>
+
+    </form>
+</div>

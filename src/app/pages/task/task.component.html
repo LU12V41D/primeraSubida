@@ -1,0 +1,56 @@
+<div *blockUI="'verified_task'">
+    {{title | uppercase}}
+    <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <table>
+            <tr>
+                <td>
+                    <div class="contenedor">
+                        <mat-form-field>
+                            <input matInput formControlName="id" placeholder="ID">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="nombre" placeholder="Nombre Tarea">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <textarea matInput formControlName="descripcion" placeholder="Descripcion"></textarea>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="duracion" placeholder="Duracion">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="idUsuarioAprobacion" placeholder="IdUsuarioAprobacion">
+                        </mat-form-field>
+
+                    </div>
+                </td>
+                <td>
+                    <div class="contenedor">
+                        <mat-form-field>
+                            <input matInput formControlName="idUsuarioAsignado" placeholder="IdUsuarioAsignado">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="idUsuarioAlta" placeholder="IdUsuarioAlta">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="idUsuarioModificacion" placeholder="IdUsuarioModificacion">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="tiempoEstimado" placeholder="TiempoEstimado">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput formControlName="estatus" placeholder="Estatus">
+                        </mat-form-field>
+
+
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+        <div class="button-row" align="center">
+            <button mat-fab color="primary" type="submit" [disabled]="form.invalid">Enviar</button>
+            <button mat-fab color="warn" (click)="onClear()" [disabled]="form.invalid">Cancelar</button>
+        </div>
+
+    </form>
+</div>

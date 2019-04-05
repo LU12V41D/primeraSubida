@@ -1,0 +1,28 @@
+<div *blockUI="'verified_miA'">
+    {{title | uppercase}}
+    <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <div class="contenedor">
+            <mat-form-field>
+                <input matInput formControlName="id" placeholder="Id">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idMinuta" placeholder="Id Minuta">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idUsuarioAsistente" placeholder="Id Usuario asistente">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="aprobacion" placeholder="Aprobacion">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="fechaAprobacion" [matDatepicker]="picker" placeholder="Fecha Modificacion">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="button-row" align="center">
+            <button mat-fab color="primary" type="submit" [disabled]="form.invalid">Enviar</button>
+            <button mat-fab color="warn" (click)="onClear()" [disabled]="form.invalid">Cancelar</button>
+        </div>
+    </form>
+</div>

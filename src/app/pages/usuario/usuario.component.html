@@ -1,0 +1,26 @@
+<div *ngIf="datos!=null; else espera">
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Apellidos</td>
+            <td>Acciones</td>
+        </tr>
+        <tr *ngFor="let art of datos">
+            <td>{{art.IdUsuario}}</td>
+            <td>{{art.Nombre}}</td>
+            <td>{{art.Apellidos}}</td>
+            <td>
+                <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                    <mat-button-toggle value="bold">
+                        <mat-icon class="material-icons" [routerLink]="['/user', art.IdUsuario]">
+                            border_color</mat-icon>
+
+                    </mat-button-toggle>
+                    <mat-button-toggle value="italic">Eliminar</mat-button-toggle>
+                </mat-button-toggle-group>
+            </td>
+        </tr>
+    </table>
+</div>
+<ng-template #espera>Esperando datos...</ng-template>

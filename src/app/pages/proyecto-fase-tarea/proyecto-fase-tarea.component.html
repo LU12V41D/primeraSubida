@@ -1,0 +1,22 @@
+<div *blockUI="'verified_pft'">
+    {{title | uppercase}}
+    <form [formGroup]="form" (submit)="onSubmit(form.value)">
+        <div class="contenedor">
+            <mat-form-field>
+                <input matInput formControlName="id" placeholder="Id">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="fase" placeholder="Fase del proyecto">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="idTarea" placeholder="Id Tarea">
+            </mat-form-field>
+
+            <div class="button-row">
+                <button mat-fab color="primary" type="submit" [disabled]="form.invalid">Enviar</button>
+                <button mat-fab color="warn" (click)="onClear()" [disabled]="form.invalid">Cancelar</button>
+            </div>
+
+        </div>
+    </form>
+</div>

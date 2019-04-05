@@ -1,0 +1,78 @@
+{{ modify.idUsuario}}
+<table>
+    <tr>
+        <td>
+            <div class="contenedor">
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.nombre" placeholder="Nombre" autofocus="true" #usuario>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.apellidos" placeholder="Apellidos">
+
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.codigoPostal" placeholder="CodigoPostal" maxlength="5" minlength="5">
+
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.correo" placeholder="Emal">
+
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.direccion" placeholder="Direccion">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.estatus" placeholder="Estatus">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.fechaAlta" [matDatepicker]="picker" placeholder="Fecha Alta">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </td>
+        <td>
+            <div class="contenedor">
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.fechaModificacion" [matDatepicker]="pickerDos" placeholder="Fecha Modificacion">
+                    <mat-datepicker-toggle matSuffix [for]="pickerDos"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerDos></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.fechaNacimiento" [matDatepicker]="pickerTres" placeholder="Fecha Nacimiento">
+                    <mat-datepicker-toggle matSuffix [for]="pickerTres"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerTres></mat-datepicker>
+                </mat-form-field>
+
+                <div class="add-bottom-padding">
+                    <mat-radio-group [(ngModel)]="modify.genero" style="border-radius: 15px;">
+                        <mat-radio-button value="M">Masculino</mat-radio-button>
+                        <mat-radio-button value="F">Femenino</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.idUsuarioAlta" placeholder="Id Usuario Alta">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.idUsuarioModificacion" placeholder="Usuario Modificacion">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [(ngModel)]="modify.urlImagen" placeholder="Url Imagen">
+                </mat-form-field>
+
+
+
+            </div>
+        </td>
+    </tr>
+</table>
